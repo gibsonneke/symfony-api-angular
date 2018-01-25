@@ -6,26 +6,26 @@ angular.module('myApp.blogPost')
         '$http',
         function ($http) {
 
-            var ROOT_URL = 'http://192.168.0.100:8000/posts';
+            var API_URL = 'http://192.168.0.100:8000/posts';
 
             function get(id) {
-                return $http.get(ROOT_URL + '/' + id);
+                return $http.get(API_URL + '/' + id);
             }
 
             function getAll() {
-                return $http.get(ROOT_URL);
+                return $http.get(API_URL);
             }
 
             function post(blogPost) {
-                return $http.post(ROOT_URL, blogPost);
+                return $http.post(API_URL, blogPost);
             }
 
             function put(id, data) {
-                return $http.put(ROOT_URL + '/' + id, data);
+                return $http.put(API_URL + '/' + id, data);
             }
 
             function remove(id) {
-                return $http.delete(ROOT_URL + '/' + id);
+                return $http.delete(API_URL + '/' + id);
             }
 
             return {
